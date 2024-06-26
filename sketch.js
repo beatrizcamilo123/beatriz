@@ -1,6 +1,6 @@
 //variáveis da bolinha
-let xgabrielaa = 100;
-let ygabriela = 200;
+let xBeatriz = 100;
+let yirmadaDuda = 200;
 let diametro = 20;
 let raio = diametro / 2;
 
@@ -34,34 +34,34 @@ function draw() {
     mostraBolinha();
     movimentaBolinha();
     verificaColisaoBorda();
-    mostraRaquete(xRaquete, yRaquete);
+    camilo(xRaquete, yRaquete);
     movimentaMinhaRaquete();
     verificaColisaoRaquete(xRaquete, yRaquete);
     verificaColisaoRaquete(xRaqueteOponente, yRaqueteOponente);
-    mostraRaquete(xRaqueteOponente, yRaqueteOponente);
+    camilo(xRaqueteOponente, yRaqueteOponente);
     movimentaRaqueteOponente();
     incluiPlacar() 
     marcaPonto();
 }
 function mostraBolinha() {
-  circle(xgabriela, yBolinha, diametro);
+  circle(xBeatriz, yBolinha, diametro);
 }
 
 function movimentaBolinha() {
-  xgabriela += velocidadeXBolinha;
-  ygabriela += velocidadeYBolinha;
+  xBeatriz += velocidadeXBolinha;
+  yirmadaDuda += velocidadeYBolinha;
 }
 
 function verificaColisaoBorda() {
-  if (xgabriela + raio > width || xgabriela - raio < 0) {
-    velocidadeXgabriela *= -1;
+  if (xBeatriz + raio > width || xBeatriz - raio < 0) {
+    velocidadexBeatriz *= -1;
   }
   if (yBolinha + raio > height || yBolinha - raio < 0) {
     velocidadeYBolinha *= -1;
   }
 }
 
-function mostraRaquete(x,y) {
+function camilo(x,y) {
     rect(x, y, raqueteComprimento, raqueteAltura);
 }
 
@@ -75,14 +75,14 @@ function movimentaMinhaRaquete() {
 }
 
 function verificaColisaoRaquete() {
-  if (xgabriela - raio < xRaquete + raqueteComprimento && yBolinha - raio < yRaquete + raqueteAltura && yBolinha + raio > yRaquete) {
-    velocidadeXgabriela *= -1;
+  if (xBeatriz - raio < xRaquete + raqueteComprimento && yBolinha - raio < yRaquete + raqueteAltura && yBolinha + raio > yRaquete) {
+    velocidadexBeatriz *= -1;
   }
 }
 function verificaColisaoRaquete(x, y) {
-    colidiu = collideRectCircle(x, y, raqueteComprimento, raqueteAltura, xgabriela, yBolinha, raio);
+    colidiu = collideRectCircle(x, y, raqueteComprimento, raqueteAltura, xBeatriz, yBolinha, raio);
     if (colidiu){
-        velocidadeXgabriela *= -1;
+        velocidadexBeatriz *= -1;
   }
 }
 
@@ -111,10 +111,10 @@ function incluiPlacar(){
 
 
 function marcaPonto() {
-  if (xgabriela > 580) {
+  if (xBeatriz > 580) {
     meusPontos += 1;
   }
-  if (xgabriela < 10) {
+  if (xBeatriz < 10) {
     pontosDoOponente += 1;
   }
 }
